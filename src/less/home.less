@@ -1,0 +1,263 @@
+/*home.less*/
+@import (reference) 'colors.inc.less';
+@import (reference) 'layout.inc.less';
+
+/* ==================== Landing ==================== */
+#landing {
+    display: block;
+    background-color: @blue-lochmara;
+    background-position: 50% 80%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+
+    #summary-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        transform: translateX(-50%) translateY(-50%);
+        background: url('./img/vid-placeholder.jpg') no-repeat;
+        background-size: cover;
+        transition: 1s opacity;
+    }
+
+    #summary-video-tint {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        background: rgba(0, 76, 155, 0.6);
+        z-index: 0;
+    }
+}
+
+.landing-layer {
+    background-color: transparent;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+/* ==================== Splash ==================== */
+#splash-container.landing-layer{
+    z-index: 500;
+}
+
+#splash {
+    background: transparent;
+    border: none;
+    .flex-center();
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+
+    @media (min-width: 400px) and (min-height: 800px) {
+        &-logo {
+            max-height: 35% !important;
+        }
+    }
+
+    @media (min-width: 768px) and (min-height: 600px) {
+        &-loc-date {
+            font-size: 2.65em !important;
+        }
+
+        &-call-to-action {
+            align-items: center;
+            display: flex !important;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    &-logo {
+        animation: logo 1.5s cubic-bezier(0, 0, 0.2, 1) 1;
+        background-image: url('../img/splash/logo-splash.png');
+        background-position-x: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100%;
+        max-height: 40%;
+        width: 100%;
+    }
+
+    &-loc-date {
+        animation: typing 4s steps(100, end);
+        color: #fff;
+        font-size: 1.65em;
+        letter-spacing: 0em;
+        margin: 5px auto 5px auto;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &-call-to-action {
+        animation: fadein 5s linear 1;
+        display: block;
+        padding: 10px;
+        transition: display 2.5s;
+
+        & .ru-btn-link .ru-btn {
+            display: inline-block;
+        }
+    }
+
+    &-contact {
+        animation: typing 5s steps(100, end);
+        color: #fff;
+        font-size: 1.5em;
+        overflow: hidden;
+        padding: 10px 0 10px 0;
+        white-space: nowrap;
+        
+        & .divider:after {
+            content: '';
+        }
+
+        & a {
+            color: @ryerson-gold;
+            font-weight: 700;
+            text-decoration: none;
+
+            &:link, &:visited {
+                color: @ryerson-gold;
+            }
+
+            &:active, &:hover, &:visited {
+                color: @orange-web;
+            }
+        }
+    }
+
+    @keyframes logo {
+        0% {background-position: -100%;}
+        100% {background-position: center 0;}
+    }
+
+    @keyframes typing {
+        0%, 50% {width: 0}
+        100% {width: 100%}
+    }
+
+    @keyframes fadein {
+        0%, 50%{opacity: 0}
+        100% {opacity: 1}
+    }
+}
+
+/* ==================== Attend ==================== */
+#attend {
+    background-attachment: fixed;
+    background-image: url('../img/cover/image_center.jpg');
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & .ru-row {
+        background: rgba(3,3,3,0.6);
+    }
+}
+
+/* ==================== Schedule ==================== */
+#schedule {
+    & .ru-section-content-col-3 {
+        width: 27vw;
+
+        @media (max-width: 1080px) {
+            & {
+                width: 40vw !important;
+            }
+        }
+
+        @media (max-width: 780px) {
+            & {
+                width: 100vw !important;
+            }
+        }
+
+        & .ru-section-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding: 3px 10px;
+
+
+        }
+    }
+
+    & .ru-schedule-time {
+        border-right: 2px dotted @blue-lochmara;
+        padding: 8px 15px 8px 0px;
+        width: 30%;
+        text-align: right;
+    }
+
+    & .ru-schedule-content {
+        padding: 8px 0px 8px 15px;
+        width: 50%;
+    }
+}
+
+/* ==================== Location ==================== */
+#location {
+    background-attachment: fixed;
+    background-image: url('../img/cover/eng2.jpg');
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & .ru-row {
+        background: rgba(3,3,3,0.6);
+    }
+}
+
+/* ==================== Sponsors/Partners ==================== */
+#sponsors {
+    & .ru-partner {
+        padding: 10px;
+    }
+
+    & .ru-partner-wide {
+        width: auto;
+
+        @media (max-width: 780px) {
+            & {
+                width: 75vw !important;
+            }
+        }
+    }
+}
+
+/* ==================== FAQ ==================== */
+#faq {
+    background-attachment: fixed;
+    background-image: url('../img/cover/slc.jpg');
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & .ru-row {
+        background: rgba(3,3,3,0.6);
+    }
+}
+
+/* ==================== Social Icons ====================*/
+.ru-social-icon {
+    color: @white;
+    font-size: 30px !important;
+    padding: 10px 20px 10px 20px;
+}

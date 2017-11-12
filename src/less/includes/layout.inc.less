@@ -1,0 +1,335 @@
+/*layout.inc.less*/
+@import (reference) 'colors.inc.less';
+
+.flex-center() {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* ==================== Colors ==================== */
+.bg-blue {
+    background-color: @ryerson-blue;
+}
+
+
+/* ==================== Utility ==================== */
+.full-screen {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.divider {
+    color: #fff;
+    display: block;
+
+    @media (min-width: 500px) {
+        & {
+            display: inline;
+        }
+
+        &:after {
+            content: ' | ';
+        }
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==================== Navigation ==================== */
+
+.ru {
+    &-navbar {
+        align-items: center;
+        background: @ryerson-blue;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+
+        @media (min-width: 768px) {
+            //padding: 5px 100px 5px 100px;
+        }
+
+        ul&-links {
+            list-style: none;
+        }
+
+        &-links li {
+            display: inline;
+            padding: 0 10px 0 10px;
+        }
+
+        &-links a {
+            color: @white;
+            font-size: 1.15em;
+            font-weight: 400;
+            text-decoration: none !important;
+            cursor: pointer;
+
+            &:link, &:visited {
+                color: @white;
+                text-decoration: none !important;
+            }
+
+            &:hover, &:active, &:focus{
+                color: @ryerson-gold;
+                text-decoration: none !important;
+            }
+        }
+
+        &-fixed-top {
+            position: fixed;
+            width: 100%;
+            z-index: 101;
+        }
+
+        &-landing {
+            background: transparent;
+        }
+    }
+
+    &-nav {
+        &-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(150,150,150,0.5);
+            border-radius: 5px;
+            width: 30px;
+            padding: 5px;
+
+            @media (min-width: 768px) {
+                & {
+                    display: none !important;
+                }
+            }
+
+            &:hover, &:active, &:focus {
+                background: @ryerson-blue;
+                cursor: pointer;
+            }
+
+            &:hover .icon-bar, &:active .icon-bar, &:focus .icon-bar{
+                background: @ryerson-gold;
+                cursor: pointer;
+            }
+
+            & .icon-bar {
+                background: @white;
+                height: 4px;
+                margin: 2px;
+                width: 20px;
+            }
+        }
+
+
+
+        &-responsive {
+            display: none;
+
+            @media (max-width: 768px) {
+                &.ru-nav-show {
+                    display: block !important;
+                }
+            }
+
+            @media (min-width: 768px) {
+                & {
+                    display: block !important;
+                }
+                &.ru-nav-mobile {
+                    display: none !important;
+                }
+            }
+
+            &.ru-nav-show .ru-navbar-links {
+                & li {
+                    background: @ryerson-blue;
+                    border-bottom: 1px solid @ryerson-gold;
+                    display: block !important;
+                    text-align: center;
+
+                    & a {
+                        display: block;
+                        padding: 10px 0 10px 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &-brand {
+        .flex-center();
+        color: @white;
+        flex-direction: row;
+        font-weight: 400;
+        padding: 0 10px 0 10px;
+        text-decoration: none !important;
+
+        &-title {
+            color: @white;
+            font-size: 1.25em;
+            font-weight: 700;
+            padding: 0 0 0 10px;
+        }
+
+        &:link, &:visited, &:hover, &:active, &:focus {
+            color: @white;
+            text-decoration: none !important;
+        }
+    }
+
+
+}
+
+/* ==================== Content ==================== */
+
+.ru{
+    &-container {
+        .flex-center();
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+    }
+
+    &-content-blue {
+        background: @ryerson-blue;
+    }
+
+    &-content-white {
+        background: @white;
+    }
+
+    &-row {
+        font-size: 1.1em;
+        padding: 20px 15px;
+
+        @media (min-width: 768px) {
+            & {
+                padding: 20px !important;
+            }
+        }
+    }
+
+    &-section {
+        line-height: 1.5em;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            & {
+                padding: 20px !important;
+                width: 90% !important;
+            }
+        }
+
+        &-default {
+            color: @black;
+
+            & * {
+                color: inherit;
+            }
+        }
+
+        &-inverted {
+            color: @white;
+
+            & * {
+                color: inherit;
+            }
+        }
+
+        &-fullwidth {
+            width: auto !important;
+        }
+
+        &-header {
+            border-bottom: 1px solid @gray-dusty;
+            font-size: 2.5em;
+            font-weight: 700;
+            line-height: normal;
+            padding: 10px;
+        }
+
+        &-subheader {
+            font-size: 1.5em;
+            font-weight: 600;
+            line-height: normal;
+            padding: 10px;
+        }
+
+        &-image {
+            padding: 20px 30px;
+
+            @media (max-width: 780px) {
+                & {
+                    padding: 20px 15px !important;
+                }
+            }
+        }
+
+        &-content {
+            font-size: 1em;
+            padding: 10px;
+
+            &-col-3 {
+                width: 30vw;
+
+                @media (max-width: 1080px) {
+                    & {
+                        width: 45vw !important;
+                    }
+                }
+
+                @media (max-width: 780px) {
+                    & {
+                        width: 100vw !important;
+                    }
+                }
+            }
+
+            &-col {}
+
+            &-row {}
+
+            &-media {
+                padding-bottom: 20px;
+                padding-top: 20px;
+            }
+        }
+
+        &-row {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+
+            &-grid {
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+
+            &-wrap {
+                flex-wrap: wrap;
+            }
+
+            &-center {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+/* ==================== Footer ==================== */
+
+#ru-footer {
+    padding: 20px;
+}
