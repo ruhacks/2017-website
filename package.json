@@ -19,7 +19,7 @@
     "express": "4.17.1",
     "express-session": "1.15.5",
     "less": "2.7.2",
-    "method-override": "2.3.9",
+    "method-override": "2.3.10",
     "pug": "2.0.0-rc.3"
   },
   "devDependencies": {
