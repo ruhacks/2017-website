@@ -37,7 +37,7 @@
     "gulp-postcss": "^6.1.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^1.0.2",
-    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-jpeg-recompress": "^7.0.0",
     "pngquant": "^3.0.0",
     "yargs": "^5.0.0"
   },
