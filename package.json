@@ -20,7 +20,7 @@
     "express-session": "1.15.5",
     "less": "2.7.2",
     "method-override": "2.3.9",
-    "pug": "2.0.0-rc.3"
+    "pug": "3.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.0",
