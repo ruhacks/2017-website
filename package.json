@@ -39,7 +39,7 @@
     "gulp-uglify": "^1.0.2",
     "imagemin-jpeg-recompress": "^5.1.0",
     "pngquant": "^3.0.0",
-    "yargs": "^5.0.0"
+    "yargs": "^15.4.1"
   },
   "repository": {
     "type": "git",
